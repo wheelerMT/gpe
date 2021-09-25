@@ -1,6 +1,7 @@
 #include <iostream>
 #include "constants.h"
 #include "grid.h"
+#include "fftw3.h"
 
 int main() {
     // -------------- Controlled variables -------------- //
@@ -25,6 +26,11 @@ int main() {
     // Shift k-space meshgrids
     fftshift(Kx);
     fftshift(Ky);
+
+    // Generate wavefunction and FFT plans
+    // * Need to generate the wavefunction arrays on the heap
+    fftw_complex *psi;
+    fftw_complex *psi_k;
 
     return 0;
 }
