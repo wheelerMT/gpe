@@ -5,8 +5,8 @@ A C++ codebase for solving the Gross-Pitaevskii equation in two dimensions.
 This will continually be updated with things to do to get the main codebase up and running.
 
 ### Grids
-- [ ] Set up 1d positional and k-space grids.
-- [ ] Construct meshgrid function.
+- [x] Set up 1d positional and k-space grids.
+- [x] Construct meshgrid function.
 - [ ] Construct fftshift function.
 
 ### Wavefunction
