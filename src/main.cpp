@@ -22,4 +22,9 @@ int main() {
     auto [X, Y] = meshgrid(x, y);
     auto [Kx, Ky] = meshgrid(kx, ky);
 
+    // Shift k-space meshgrids
+    fftshift(Kx);
+    fftshift(Ky);
+
+    return 0;
 }

@@ -7,7 +7,7 @@ This will continually be updated with things to do to get the main codebase up a
 ### Grids
 - [x] Set up 1d positional and k-space grids.
 - [x] Construct meshgrid function.
-- [ ] Construct fftshift function.
+- [x] Construct fftshift function.
 
 ### Wavefunction
 - [ ] Set up initial state algorithm (un-trapped/uniform density).

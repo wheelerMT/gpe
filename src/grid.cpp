@@ -19,3 +19,38 @@ std::tuple<array2d_t, array2d_t> meshgrid(std::vector<double> &x, std::vector<do
 
     return {X, Y};
 }
+
+void fftshift(array2d_t &array) {
+    /*
+     * Shifts the zero-frequency component to the center
+     * of the spectrum.
+     */
+
+    int Nx = int(array[0].size());
+    int Ny = int(array.size());
+    auto array_copy = array;
+
+    // Reverse each row:
+    for (int i = 0; i < Ny; ++i) {
+        for (int j = 0; j < Nx; ++j) {
+            if (j < Nx / 2) {
+                array[i][j] = array_copy[i][Nx / 2 + j];
+            } else if (j >= Nx / 2) {
+                array[i][j] = array_copy[i][j - Nx / 2];
+            }
+        }
+    }
+
+    array_copy = array;
+
+    // Reverse each column:
+    for (int i = 0; i < Ny; ++i) {
+        for (int j = 0; j < Nx; ++j) {
+            if (j < Nx / 2) {
+                array[j][i] = array_copy[Nx / 2 + j][i];
+            } else if (j >= Nx / 2) {
+                array[j][i] = array_copy[j - Nx / 2][i];
+            }
+        }
+    }
+}
